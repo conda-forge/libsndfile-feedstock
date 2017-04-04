@@ -12,7 +12,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-    number: 0
+    number: 1
     skip: true  # [win]
 
 requirements:
@@ -21,7 +21,10 @@ requirements:
     - libflac
     - libvorbis
     - libogg
-
+  run:
+    - libflac
+    - libvorbis
+    - libogg
 test:
   commands:
     - test -f $PREFIX/lib/libsndfile.dylib  # [osx]
@@ -38,3 +41,4 @@ about:
 extra:
     recipe-maintainers:
         - hbredin
+        - thomasfillon
