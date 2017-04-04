@@ -21,7 +21,10 @@ requirements:
     - libflac
     - libvorbis
     - libogg
-
+  run:
+    - libflac
+    - libvorbis
+    - libogg
 test:
   commands:
     - test -f $PREFIX/lib/libsndfile.dylib  # [osx]
