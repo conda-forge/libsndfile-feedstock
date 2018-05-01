@@ -28,7 +28,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libsndfile.dylib  # [osx]
     - test -f $PREFIX/lib/libsndfile.so  # [linux]
-    - exist $PREFIX/lib/libsndfile.dll  # [win]
+    - if not exist %LIBRARY_LIB%\\libsndfile.dll exit 1  # [win]
 
 about:
     home: http://www.mega-nerd.com/libsndfile
