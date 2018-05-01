@@ -4,6 +4,9 @@ setlocal EnableDelayedExpansion
 mkdir CMakeBuild
 cd CMakeBuild
 
+pwd
+ls ..
+
 :: Configure using the CMakeFiles
 cmake .. -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
          -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
