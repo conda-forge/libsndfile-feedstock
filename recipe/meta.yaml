@@ -1,6 +1,6 @@
 {% set name = "libsndfile" %}
-{% set version = "1.0.27" %}
-{% set sha256 = "a391952f27f4a92ceb2b4c06493ac107896ed6c76be9a613a4731f076d30fac0" %}
+{% set version = "1.0.28" %}
+{% set sha256 = "1ff33929f042fa333aed1e8923aa628c3ee9e1eb85512686c55092d1e5a9dfa9" %}
 
 package:
     name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-    number: 1
+    number: 0
     skip: true  # [win]
 
 requirements:
