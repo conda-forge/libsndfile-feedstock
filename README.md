@@ -14,14 +14,16 @@ Summary: libsndfile - a C library for reading and writing files containing sampl
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libsndfile-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libsndfile-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/libsndfile-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libsndfile-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/libsndfile-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/libsndfile-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/libsndfile-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/libsndfile-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libsndfile/badges/version.svg)](https://anaconda.org/conda-forge/libsndfile)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libsndfile/badges/downloads.svg)](https://anaconda.org/conda-forge/libsndfile)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libsndfile-green.svg)](https://anaconda.org/conda-forge/libsndfile) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsndfile.svg)](https://anaconda.org/conda-forge/libsndfile) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsndfile.svg)](https://anaconda.org/conda-forge/libsndfile) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsndfile.svg)](https://anaconda.org/conda-forge/libsndfile) |
 
 Installing libsndfile
 =====================
