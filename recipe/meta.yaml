@@ -12,8 +12,10 @@ source:
     sha256: {{ sha256 }}
 
 build:
-    number: 1000
-    skip: true  # [win]
+    number: 1001
+    # skip: true  # [win]
+    skip: true  # [osx]  # Save CI resources
+    skip: true  # [linux]  # Save CI resources
     run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
         - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -35,7 +37,7 @@ test:
   commands:
     - test -f $PREFIX/lib/libsndfile.dylib  # [osx]
     - test -f $PREFIX/lib/libsndfile.so  # [linux]
-
+    - if not exist %LIBRARY_LIB%\\libsndfile.dll exit 1  # [win]
 about:
     home: http://www.mega-nerd.com/libsndfile
     dev_url: https://github.com/erikd/libsndfile
