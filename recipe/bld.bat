@@ -12,7 +12,7 @@ cd CMakeBuild
 if %platform%==Win32 set CMAKE_GENERATOR=Visual Studio 15 2017
 if %platform%==x64 set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
 
-cmake .. -G"%CMAKE_GENERATOR%" ^
+cmake ..\.. -G"%CMAKE_GENERATOR%" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_BUILD_TYPE:STRING=Release
