@@ -1,6 +1,6 @@
 {% set name = "libsndfile" %}
-{% set version = "1.0.28" %}
-{% set sha256 = "1ff33929f042fa333aed1e8923aa628c3ee9e1eb85512686c55092d1e5a9dfa9" %}
+{% set version = "1.0.29" %}
+{% set sha256 = "2ba20d44817c8176f097ab25eff44ef0aeec9e00973def5a7174c5ae0764b22f" %}
 
 package:
     name: {{ name|lower }}
@@ -8,12 +8,11 @@ package:
 
 source:
     fn: {{ name }}-{{ version }}.tar.gz
-    url: http://www.mega-nerd.com/{{ name }}/files/{{ name }}-{{ version }}.tar.gz
+    url: https://github.com/erikd/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.bz2
     sha256: {{ sha256 }}
 
 build:
-    number: 1000
-    skip: true  # [win]
+    number: 0
     run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
         - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -22,7 +21,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make
+    - cmake  # [win]
+    - make  # [not win]
+    - ninja  # [win]
+    - python
   host:
     - libflac
     - libvorbis
@@ -34,8 +36,13 @@ requirements:
     - libogg
 test:
   commands:
-    - test -f $PREFIX/lib/libsndfile.dylib  # [osx]
-    - test -f $PREFIX/lib/libsndfile.so  # [linux]
+    - test -f $PREFIX/lib/libsndfile${SHLIB_EXT}  # [not win]
+    - if not exist %PREFIX%\\Library\\bin\\sndfile.dll exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\lib\\sndfile.lib exit 1  # [win]
+
+    # try to run one of the commands (--help returns 1, so make that OK)
+    - sndfile-info --help || ec=$?; if [ $ec -gt 1 ]; then exit $ec; fi  # [not win]
+    - sndfile-info --help || if !ERRORLEVEL! LEQ 1 cmd /c "exit /b 0"  # [win]
 
 about:
     home: http://www.mega-nerd.com/libsndfile
