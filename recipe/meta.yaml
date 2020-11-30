@@ -28,11 +28,13 @@ requirements:
     - libflac
     - libvorbis
     - libogg
+    - libopus
   # libflac, libvorbis and libogg don't specify run exports
   run:
     - libflac
     - libvorbis
     - libogg
+    - libopus
 test:
   commands:
     - test -f $PREFIX/lib/libsndfile${SHLIB_EXT}  # [not win]
