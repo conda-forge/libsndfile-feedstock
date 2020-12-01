@@ -11,7 +11,7 @@ source:
     sha256: 9df273302c4fa160567f412e10cc4f76666b66281e7ba48370fb544e87e4611a
 
 build:
-    number: 0
+    number: 1
     run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
         - {{ pin_subpackage(name, max_pin="x.x") }}
