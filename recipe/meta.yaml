@@ -28,12 +28,7 @@ requirements:
     - libflac
     - libvorbis
     - libogg
-    # - libopus  # not yet on conda-forge
-  # libflac, libvorbis and libogg don't specify run exports
-  run:
-    - libflac
-    - libvorbis
-    - libogg
+    - libopus
 
 test:
   commands:
