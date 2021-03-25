@@ -11,7 +11,7 @@ source:
   sha256: a8cfb1c09ea6e90eff4ca87322d4168cdbe5035cb48717b40bf77e751cc02163
 
 build:
-  number: 0
+  number: 1
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -25,6 +25,7 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
     - python
+    - pkg-config  # [unix]
   host:
     - libflac
     - libvorbis
