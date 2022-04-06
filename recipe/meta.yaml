@@ -31,6 +31,8 @@ requirements:
     - libvorbis
     - libogg
     - libopus
+    - lame
+    - mpg123
 
 test:
   commands:
