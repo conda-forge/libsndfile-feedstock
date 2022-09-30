@@ -32,7 +32,7 @@ requirements:
     - libogg
     - libopus
     - lame
-    - mpg123 >=1.29.3
+    - mpg123 >=1.29.3  # [not win]
 
 test:
   commands:
