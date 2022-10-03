@@ -12,6 +12,7 @@ source:
 
 build:
   number: 0
+  skip : true  # [not win]
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
