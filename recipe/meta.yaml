@@ -6,13 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz
-  sha256: 0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41
+  fn: {{ name }}-{{ version }}.zip
+  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.zip
+  sha256: d71292106e6f75c3b6dc0292087d935507a34c3b93ad65c00d3d5729c5eecad2
 
 build:
   number: 0
-  skip : true  # [not win]
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
