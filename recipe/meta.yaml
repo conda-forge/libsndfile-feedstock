@@ -6,9 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
-  url: https://github.com/libsndfile/{{ name }}/archive/refs/tags/{{ version }}.zip
-  sha256: d71292106e6f75c3b6dc0292087d935507a34c3b93ad65c00d3d5729c5eecad2
+  # libsndfile 1.1.0 shipped with slightly broken package archives
+  # these should be reconciled into one download in a subsequent release
+  fn: {{ name }}-{{ version }}.zip  # [win]
+  url: https://github.com/libsndfile/{{ name }}/archive/refs/tags/{{ version }}.zip  # [win]
+  sha256: d71292106e6f75c3b6dc0292087d935507a34c3b93ad65c00d3d5729c5eecad2  # [win]
+  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
+  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz  # [not win]
+  sha256: 0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41  # [not win]
+
 
 build:
   number: 0
