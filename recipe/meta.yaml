@@ -7,7 +7,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.zip
-  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.zip
+  url: https://github.com/libsndfile/{{ name }}/archive/refs/tags/{{ version }}.zip
   sha256: d71292106e6f75c3b6dc0292087d935507a34c3b93ad65c00d3d5729c5eecad2
 
 build:
