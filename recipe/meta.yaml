@@ -38,7 +38,7 @@ requirements:
     - libogg
     - libopus
     - lame
-    - mpg123 >=1.29.3  # [not win]
+    - mpg123 >=1.29.3
 
 test:
   commands:
