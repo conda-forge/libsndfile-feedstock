@@ -18,8 +18,6 @@ source:
 
 build:
   number: 0
-  # skip non-windows builds until we get everything smoothed out
-  skip: true  # [not win]  
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
