@@ -18,6 +18,9 @@ source:
     # On windows, this results in an empty "-l" which breakds downstream packages
     # since the linker tries to link to ".libs"
     # https://github.com/conda-forge/gst-plugins-bad-feedstock/pull/20#issuecomment-1336553304
+    # it may be related to
+    # https://github.com/libsndfile/libsndfile/issues/827
+    # But I don't have time to investigate too much
     - disable_libs_private_pkgconfig.patch
 
 
