@@ -1,5 +1,5 @@
 {% set name = "libsndfile" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -9,9 +9,9 @@ source:
   # libsndfile 1.1.0 shipped with slightly broken package archives
   # these should be reconciled into one download in a subsequent release
   url: https://github.com/libsndfile/{{ name }}/archive/refs/tags/{{ version }}.zip  # [win]
-  sha256: d71292106e6f75c3b6dc0292087d935507a34c3b93ad65c00d3d5729c5eecad2  # [win]
+  sha256: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a  # [win]
   url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz  # [not win]
-  sha256: 0f98e101c0f7c850a71225fb5feaf33b106227b3d331333ddc9bacee190bcf41  # [not win]
+  sha256: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a  # [not win]
   patches:
     # the libs private sections of pkgconfig is only useful when statically
     # linking which we do not use.
@@ -25,7 +25,7 @@ source:
 
 
 build:
-  number: 1
+  number: 0
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
