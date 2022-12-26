@@ -213,4 +213,3 @@ Feedstock Maintainers
 * [@thomasfillon](https://github.com/thomasfillon/)
 * [@wolfv](https://github.com/wolfv/)
 
-
