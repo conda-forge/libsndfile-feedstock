@@ -9,7 +9,7 @@ source:
   # libsndfile 1.1.0 shipped with slightly broken package archives
   # these should be reconciled into one download in a subsequent release
   url: https://github.com/libsndfile/{{ name }}/archive/refs/tags/{{ version }}.zip  # [win]
-  sha256: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a  # [win]
+  sha256: 9948ed289259a4df11b225b636c45d05935899cb7380176be3c16453bd5e98c6  # [win]
   url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz  # [not win]
   sha256: 0e30e7072f83dc84863e2e55f299175c7e04a5902ae79cfb99d4249ee8f6d60a  # [not win]
   patches:
