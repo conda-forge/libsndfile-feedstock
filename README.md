@@ -1,11 +1,11 @@
-About libsndfile
-================
+About libsndfile-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsndfile-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.mega-nerd.com/libsndfile
 
 Package license: LGPL-2.1-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsndfile-feedstock/blob/main/LICENSE.txt)
 
 Summary: libsndfile - a C library for reading and writing files containing sampled sound (such as MS Windows WAV and the Apple/SGI AIFF format) through one standard library interface
 
