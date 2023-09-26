@@ -15,7 +15,7 @@ cxx_compiler_version:
 macos_machine:
 - arm64-apple-darwin20.0.0
 mpg123:
-- '1.31'
+- '1.32'
 target_platform:
 - osx-arm64
 zip_keys:
