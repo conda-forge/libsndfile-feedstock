@@ -21,7 +21,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
