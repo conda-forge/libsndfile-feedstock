@@ -7,9 +7,7 @@ cd build
 
 :: configure
 cmake -G "Ninja" ^
-    -DCMAKE_BUILD_TYPE:STRING=Release ^
-    -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
-    -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
+    %CMAKE_ARGS% ^
     -DBUILD_EXAMPLES=OFF ^
     -DBUILD_PROGRAMS=ON ^
     -DBUILD_REGTEST=OFF ^
@@ -22,6 +20,7 @@ cmake -G "Ninja" ^
     -DENABLE_EXTERNAL_LIBS=ON ^
     -DENABLE_PACKAGE_CONFIG=ON ^
     -DINSTALL_PKGCONFIG_MODULE=ON ^
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
     ..
 if errorlevel 1 exit 1
 
