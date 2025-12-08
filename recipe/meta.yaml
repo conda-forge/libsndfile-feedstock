@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz  
-  sha256: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e  
+  url: https://github.com/libsndfile/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.xz
+  sha256: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e
   patches:
     # the libs private sections of pkgconfig is only useful when statically
     # linking which we do not use.
@@ -21,7 +21,7 @@ source:
 
 
 build:
-  number: 1
+  number: 2
   run_exports:
         # https://abi-laboratory.pro/?view=timeline&l=libsndfile
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -29,6 +29,7 @@ build:
 requirements:
   build:
     - gnuconfig  # [unix]
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make   # [not win]
