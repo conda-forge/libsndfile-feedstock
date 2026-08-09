@@ -19,7 +19,7 @@ source:
     - disable_libs_private_pkgconfig.patch
 
 build:
-  number: 2
+  number: 3
   script: build
   variant:
     ignore_keys:
