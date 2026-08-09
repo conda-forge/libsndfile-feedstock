@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '14'
 docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma9
+- quay.io/condaforge/linux-anvil-x86_64:alma10
 libflac:
 - '1.5'
 libogg:
@@ -23,7 +23,7 @@ libogg:
 libsndfile:
 - '1.2'
 mpg123:
-- '1.32'
+- '1.33'
 target_platform:
 - linux-aarch64
 zip_keys:
