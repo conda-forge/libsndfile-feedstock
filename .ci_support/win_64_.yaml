@@ -13,6 +13,6 @@ libflac:
 libogg:
 - '1.3'
 mpg123:
-- '1.32'
+- '1.33'
 target_platform:
 - win-64
