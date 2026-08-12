@@ -1,0 +1,91 @@
+schema_version: 1
+
+context:
+  name: libsndfile
+  version: "1.2.2"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/libsndfile/${{ name }}/releases/download/${{ version }}/${{ name }}-${{ version }}.tar.xz
+  sha256: 3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e
+  patches:
+    # Libs.private is only useful for static linking, which this package does
+    # not provide. On Windows it also produced an empty -l entry that broke
+    # downstream linking.
+    # https://github.com/libsndfile/libsndfile/issues/827
+    - disable_libs_private_pkgconfig.patch
+
+build:
+  number: 3
+  script: build
+  variant:
+    ignore_keys:
+      - python
+
+requirements:
+  build:
+    - ${{ stdlib('c') }}
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - python
+    - if: unix
+      then:
+        - gnuconfig
+        - make
+        - pkg-config
+    - if: win
+      then:
+        - cmake
+        - ninja
+  host:
+    - libflac
+    - libvorbis
+    - libogg
+    - libopus
+    - lame
+    - mpg123
+  run_exports:
+    # https://abi-laboratory.pro/?view=timeline&l=libsndfile
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - package_contents:
+      bin:
+        - sndfile-info
+      include:
+        - sndfile.h
+      lib:
+        - if: unix
+          then: sndfile
+      files:
+        - if: win
+          then:
+            - Library/bin/sndfile.dll
+            - Library/lib/sndfile.lib
+  - if: unix and build_platform == target_platform
+    then:
+      script:
+        - sndfile-info --help || test $? -le 1
+  - if: win
+    then:
+      script:
+        - cmd /V:ON /C "sndfile-info --help & if !ERRORLEVEL! GTR 1 (exit /b !ERRORLEVEL!) else (exit /b 0)"
+
+about:
+  homepage: http://www.mega-nerd.com/libsndfile
+  repository: https://github.com/libsndfile/libsndfile
+  license: LGPL-2.1-or-later
+  license_file: COPYING
+  summary: libsndfile - a C library for reading and writing files containing sampled sound through one standard library interface
+
+extra:
+  recipe-maintainers:
+    - hbredin
+    - thomasfillon
+    - SylvainCorlay
+    - wolfv
+    - JohanMabille
+    - bmcfee
